@@ -1,11 +1,21 @@
-<!DOCTYPE html>
+<!doctype>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+    <title>News Letter</title>
+    <meta charset='utf8'>
+</head>
+
+<body>
+    <h1> Subscribe to our newsletter
+        <h/>
+        <form action="/newsletter" method="post" id="contactform">
+            <p> Enter your Email:<br> <input type="text" name="email"> </p>
+            <input type='hidden' name="_csrf" value='<%=csrfTokens%>'>
+            <p> <input type='Submit'></p>
+        </form>
+        <div style="color:red;">
+            <%= errmessage %>
+        </div>
+</body>
 </html>
