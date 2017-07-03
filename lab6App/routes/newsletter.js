@@ -12,7 +12,7 @@ router.post('/newsletter', function (req, res, next) {
             textdata += index + ": " + data[index] + "\n";
         }
         textdata += "\n\n";
-        fs.appendFile('../newsletter.txt', textdata, function (err) {
+        fs.appendFile('newsletter.txt', textdata, function (err) {
             next(err);
         });
         res.redirect('/thankyou');
