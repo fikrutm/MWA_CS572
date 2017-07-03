@@ -5,6 +5,6 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { errmessage:'',csrfTokens: req.csrfToken()});
 });
-
+  
 
 module.exports = router;
