@@ -1,0 +1,25 @@
+
+	{
+	_id:123456789,
+	firstName: "Fikru",
+	lastName: "Mengesha",
+	email:fikrumengesha@@gmail.com,
+	phoneNumber:236789076,
+		BorrowedBooks:[{ISBN:ZZ1245AWEN,
+			authors:["Lux Wager", "Tom Roghgu"],
+		        title: "Modern Web Programming",
+        	        keywords:["Modern", "Modern Web"],
+                	returnDate: new Date(2017-07-26);
+                	}, 
+
+	                { ISBN:R785JDAHFF76,
+        	        authors: ["George Loroseph", "Cook Monk"]
+               		 title: " Web Application Programming",
+          	      keywords:["Web", "Application", "Web Application"],
+	          	 returnDate: new Date(2017-05-23);
+
+	               }]
+	}
+author : book relation ship is many to many but assuming few authors publish together many books I embed books inside athors
+Student : borrowed books is obviously one to many and embeded for better lookup and atomicity
+these design doesnt includes the books in the library wich are not borrowed.
