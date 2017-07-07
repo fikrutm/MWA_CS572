@@ -18,28 +18,29 @@ router.get('/promise', function (req, res, next) {
 });
 
 router.get('/observable', function (req, res, next) {
-  var response = rx.Observable.fromPromise(promise);
-  response.map((data) => data.json()
-    .subscribe((data) => res.send(data)));
+  
+  var observable = rx.Observable.fromPromise(promise);
+ 
+ observable.subscribe((data) => {res.render('users',{users:data});},
+    (err)=>res.end('woring data!'));
   //res.send('observabele');
 });
 
 router.get('/asyncawait', function (req, res, next) {
-asyncAwait(req);
-//   res.send('from syncawait');
+asyncAwait(res);
+//  res.send('from syncawait');
 });
 
-async function asyncAwait(req) {
+async function asyncAwait(res) {
   try {
-    let results = await promise;
-    result.then(data => data.json())
-      .then(data => res.send(data))
-      .catch((err) => { console.log(err) });
+    
+   
+   let results = await promise;
+   result.then(data => data.json())
+    .then(data => {res.render('users',{users:data});})
+     .catch((err) => { console.log(err) });
   } catch (err) {
     console.log(Error.message);
 
-  }
-
-}
-
+  }}
 module.exports = router;
