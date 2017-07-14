@@ -1,0 +1,12 @@
+<div class="outter">
+    <div >
+        <div class="col-xs-10">         
+            
+            <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home Page</a> |
+            <a [routerLink]="['students']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Students</a> |
+            
+            <hr>
+            <router-outlet></router-outlet>
+        </div>
+    
+</div>

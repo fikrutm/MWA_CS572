@@ -1,0 +1,10 @@
+
+ <div [ngClass]="{outerClass:true}">
+  <ul>
+  
+<li *ngFor="let item of data; let num=index"><a [routerLink]="['profile',item.id]">{{item.name}}</a></li>
+  </ul>
+
+  </div>
+  
+    <router-outlet></router-outlet>

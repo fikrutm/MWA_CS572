@@ -1,0 +1,8 @@
+
+.outerClass{
+    border-right:1px solid green;
+    margin-right:50px;
+    float:left;
+    width:250px;
+    height:400px;
+}
