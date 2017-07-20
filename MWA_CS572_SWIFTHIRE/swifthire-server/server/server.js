@@ -13,11 +13,11 @@ app.set('views',path.join(__dirname,'views'));
 app.set('view-engine','ejs');
 app.engine('html',require('ejs').renderFile);
 
-//static 
+
 
 app.use(express.static(path.join(__dirname,'client')));
 
-//body parser
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
@@ -37,8 +37,8 @@ res.setHeader('Access-Control-Allow-Origin', '*');
     // Request headers you wish to allow
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
+    // Set to true if we need the website to include cookies in the requests sent
+   
     res.setHeader('Access-Control-Allow-Credentials', true);
 next();
 });
